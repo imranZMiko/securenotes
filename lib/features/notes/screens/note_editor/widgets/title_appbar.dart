@@ -49,10 +49,8 @@ class _TitleAppBarState extends State<TitleAppBar> {
             focusedErrorBorder: InputBorder.none,
             contentPadding: EdgeInsets.zero,
           ),
-          style: TextStyle().copyWith(
-            fontSize: 24,
-          ),
-          onTapOutside: (event){
+          style: Theme.of(context).textTheme.headlineSmall,
+          onTapOutside: (event) {
             FocusManager.instance.primaryFocus?.unfocus();
           },
         ),

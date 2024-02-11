@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:securenotes/utils/theme/text_theme.dart';
 import '../../constants/colors.dart';
 import '../../constants/sizes.dart';
 
@@ -7,9 +8,8 @@ import '../../constants/sizes.dart';
 class CustomTextButtonTheme {
   CustomTextButtonTheme._(); //To avoid creating instances
 
-
   /* -- Light Theme -- */
-  static final lightTextButtonTheme  = TextButtonThemeData(
+  static final lightTextButtonTheme = TextButtonThemeData(
     style: TextButton.styleFrom(
       elevation: 0,
       foregroundColor: CustomColors.dark,
@@ -17,9 +17,11 @@ class CustomTextButtonTheme {
       disabledForegroundColor: CustomColors.darkGrey,
       disabledBackgroundColor: CustomColors.buttonDisabled,
       side: const BorderSide(color: CustomColors.darkGrey),
-      padding: const EdgeInsets.symmetric(horizontal: Sizes.buttonWidth, vertical: Sizes.buttonHeight),
-      textStyle: GoogleFonts.quicksand(fontSize: 18),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Sizes.buttonRadius)),
+      padding: const EdgeInsets.symmetric(
+          horizontal: Sizes.buttonWidth, vertical: Sizes.buttonHeight),
+      textStyle: CustomTextTheme.lightTextTheme.bodyLarge,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(Sizes.buttonRadius)),
     ),
   );
 
@@ -32,9 +34,11 @@ class CustomTextButtonTheme {
       disabledForegroundColor: CustomColors.darkGrey,
       disabledBackgroundColor: CustomColors.darkerGrey,
       side: const BorderSide(color: CustomColors.darkGrey),
-      padding: const EdgeInsets.symmetric(horizontal: Sizes.buttonWidth, vertical: Sizes.buttonHeight),
-      textStyle: GoogleFonts.quicksand(fontSize: 18),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Sizes.buttonRadius)),
+      padding: const EdgeInsets.symmetric(
+          horizontal: Sizes.buttonWidth, vertical: Sizes.buttonHeight),
+      textStyle: CustomTextTheme.darkTextTheme.bodyLarge,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(Sizes.buttonRadius)),
     ),
   );
 }

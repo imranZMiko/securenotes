@@ -20,9 +20,7 @@ class EditCategoriesDialog extends StatelessWidget {
             Text(
               'Edit Categories',
               textAlign: TextAlign.center,
-              style: TextStyle().copyWith(
-                fontSize: 18,
-              ),
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             SizedBox(
               height: Sizes.md,

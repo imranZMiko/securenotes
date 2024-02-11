@@ -40,7 +40,7 @@ class FilterDrawer extends StatelessWidget {
               children: [
                 Text(
                   "Sort By",
-                  style: TextStyle().copyWith(fontSize: 20),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 SizedBox(height: Sizes.spaceBtwItems),
                 FilterSection(
@@ -49,7 +49,7 @@ class FilterDrawer extends StatelessWidget {
                 SizedBox(height: Sizes.spaceBtwItems),
                 Text(
                   "Sort Order",
-                  style: TextStyle().copyWith(fontSize: 20),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 SizedBox(height: Sizes.spaceBtwItems),
                 FilterSection(

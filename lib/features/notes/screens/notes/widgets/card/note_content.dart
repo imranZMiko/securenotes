@@ -20,17 +20,17 @@ class NoteContent extends StatelessWidget {
       children: [
         Text(
           title,
-          style: TextStyle(fontSize: 18),
+          style: Theme.of(context).textTheme.bodyLarge,
         ),
         SizedBox(height: Sizes.xs),
         Text(
           subtitle,
-          style: TextStyle(fontSize: 14),
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
         SizedBox(height: Sizes.xs),
         Text(
           time,
-          style: TextStyle(fontSize: 12),
+          style: Theme.of(context).textTheme.bodySmall,
         ),
       ],
     );

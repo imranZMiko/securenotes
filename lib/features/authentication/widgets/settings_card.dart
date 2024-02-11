@@ -32,9 +32,7 @@ class _SettingsCardState extends State<SettingsCard> {
                 Expanded(
                   child: Text(
                     widget.title,
-                    style: TextStyle().copyWith(
-                      fontSize: 18,
-                    ),
+                    style: Theme.of(context).textTheme.bodyLarge,
                   ),
                 ),
                 isOpen ? Icon(Icons.arrow_drop_down) : Icon(Icons.arrow_right),
