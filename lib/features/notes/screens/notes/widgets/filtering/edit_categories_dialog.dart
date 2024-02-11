@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:securenotes/utils/constants/colors.dart';
 import 'package:securenotes/utils/constants/sizes.dart';
+import 'package:securenotes/utils/helpers/helper_functions.dart';
 
 class EditCategoriesDialog extends StatelessWidget {
   const EditCategoriesDialog({super.key});
@@ -11,7 +13,9 @@ class EditCategoriesDialog extends StatelessWidget {
         borderRadius: BorderRadius.circular(Sizes.borderRadiusMd),
       ),
       elevation: 0,
-      backgroundColor: Colors.white,
+      backgroundColor: HelperFunctions.isDarkMode(context)
+          ? CustomColors.darkerGrey
+          : CustomColors.white,
       child: Padding(
         padding: EdgeInsets.fromLTRB(0, Sizes.md, 0, Sizes.md),
         child: Column(

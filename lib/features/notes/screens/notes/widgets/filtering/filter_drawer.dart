@@ -22,11 +22,13 @@ class FilterDrawer extends StatelessWidget {
           height: Sizes.filterDrawerHeight,
           width: HelperFunctions.screenWidth(context),
           decoration: BoxDecoration(
-            color: CustomColors.white,
+            color: HelperFunctions.isDarkMode(context)
+                ? CustomColors.dark
+                : CustomColors.white,
             borderRadius: BorderRadius.circular(Sizes.borderRadiusLg),
             boxShadow: [
               BoxShadow(
-                color: CustomColors.grey.withOpacity(0.5),
+                color: CustomColors.black.withOpacity(0.5),
                 spreadRadius: 5,
                 blurRadius: 7,
                 offset: Offset(0, 3),

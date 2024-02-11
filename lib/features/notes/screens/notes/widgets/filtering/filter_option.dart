@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:securenotes/utils/constants/colors.dart';
 import 'package:securenotes/utils/constants/enums.dart';
 import 'package:securenotes/utils/constants/sizes.dart';
+import 'package:securenotes/utils/helpers/helper_functions.dart';
 
 class FilterOption extends StatelessWidget {
   const FilterOption({
@@ -35,7 +36,13 @@ class FilterOption extends StatelessWidget {
         borderRadiusMap[type] ?? BorderRadius.zero;
 
     return Material(
-      color: isSelected ? CustomColors.grey : CustomColors.slightGrey,
+      color: isSelected
+          ? (HelperFunctions.isDarkMode(context)
+              ? CustomColors.mDarkerGrey
+              : CustomColors.grey)
+          : (HelperFunctions.isDarkMode(context)
+              ? CustomColors.darkerGrey
+              : CustomColors.slightGrey),
       borderRadius: borderRadius,
       child: InkWell(
         onTap: onTap,

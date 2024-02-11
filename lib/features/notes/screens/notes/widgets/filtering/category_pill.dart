@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:securenotes/utils/constants/sizes.dart';
+import 'package:securenotes/utils/helpers/helper_functions.dart';
 
 import '../../../../../../utils/constants/colors.dart';
 
@@ -17,7 +18,13 @@ class CategoryPill extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: isSelected ? CustomColors.grey : CustomColors.slightGrey,
+      color: isSelected
+          ? (HelperFunctions.isDarkMode(context)
+              ? CustomColors.mDarkerGrey
+              : CustomColors.grey)
+          : (HelperFunctions.isDarkMode(context)
+              ? CustomColors.darkerGrey
+              : CustomColors.slightGrey),
       borderRadius: BorderRadius.circular(Sizes.borderRadiusLg),
       child: InkWell(
         onTap: onTap,

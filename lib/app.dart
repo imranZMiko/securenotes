@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:securenotes/features/authentication/screens/login.dart';
 import 'package:securenotes/features/authentication/screens/register.dart';
 import 'package:securenotes/features/authentication/screens/settings.dart';
@@ -12,12 +13,12 @@ class App extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Secure Notes',
       themeMode: ThemeMode.system,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: const AccountSettingsScreen(),
+      home: const NoteEditorScreen(),
     );
   }
 }

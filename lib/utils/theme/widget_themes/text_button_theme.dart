@@ -29,11 +29,11 @@ class CustomTextButtonTheme {
   static final darkTextButtonTheme = TextButtonThemeData(
     style: TextButton.styleFrom(
       elevation: 0,
-      foregroundColor: CustomColors.dark,
-      backgroundColor: CustomColors.primary,
+      foregroundColor: CustomColors.primary,
+      backgroundColor: CustomColors.dark,
       disabledForegroundColor: CustomColors.darkGrey,
       disabledBackgroundColor: CustomColors.darkerGrey,
-      side: const BorderSide(color: CustomColors.darkGrey),
+      side: const BorderSide(color: CustomColors.softGrey),
       padding: const EdgeInsets.symmetric(
           horizontal: Sizes.buttonWidth, vertical: Sizes.buttonHeight),
       textStyle: CustomTextTheme.darkTextTheme.bodyLarge,

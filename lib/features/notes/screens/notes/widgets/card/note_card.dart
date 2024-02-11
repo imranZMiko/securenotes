@@ -3,6 +3,7 @@ import 'package:securenotes/features/notes/screens/notes/widgets/card/leading_ba
 import 'package:securenotes/features/notes/screens/notes/widgets/card/note_content.dart';
 import 'package:securenotes/features/notes/screens/notes/widgets/card/note_options_menu_button.dart';
 import 'package:securenotes/utils/constants/sizes.dart';
+import 'package:securenotes/utils/helpers/helper_functions.dart';
 
 import '../../../../../../utils/constants/colors.dart';
 
@@ -12,7 +13,9 @@ class NoteCard extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(Sizes.borderRadiusSm),
       child: Material(
-        color: CustomColors.slightGrey,
+        color: HelperFunctions.isDarkMode(context)
+            ? CustomColors.darkerGrey
+            : CustomColors.slightGrey,
         child: InkWell(
           onTap: () {},
           child: Container(
@@ -20,7 +23,10 @@ class NoteCard extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                LeadingColorBar(color: CustomColors.grey),
+                LeadingColorBar(
+                    color: HelperFunctions.isDarkMode(context)
+                        ? CustomColors.dark
+                        : CustomColors.grey),
                 SizedBox(width: Sizes.lg),
                 Expanded(
                   child: NoteContent(

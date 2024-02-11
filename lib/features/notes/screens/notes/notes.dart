@@ -30,7 +30,9 @@ class NotesScreen extends StatelessWidget {
       body: FilteredNoteList(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: CustomColors.slightGrey,
+        backgroundColor: HelperFunctions.isDarkMode(context)
+            ? CustomColors.mDarkerGrey
+            : CustomColors.slightGrey,
         child: Icon(Icons.add),
         shape: CircleBorder(),
       ),
