@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:securenotes/utils/constants/colors.dart';
 import '../../constants/sizes.dart';
+import '../../constants/colors.dart';
 
-class TTextFormFieldTheme {
-  TTextFormFieldTheme._();
+class CustomTextFormFieldTheme {
+  CustomTextFormFieldTheme._();
 
   static InputDecorationTheme lightInputDecorationTheme = InputDecorationTheme(
     errorMaxLines: 3,
     prefixIconColor: CustomColors.darkGrey,
     suffixIconColor: CustomColors.darkGrey,
-    // constraints: const BoxConstraints.expand(height: TSizes.inputFieldHeight),
+    // constraints: const BoxConstraints.expand(height: Sizes.inputFieldHeight),
     labelStyle: const TextStyle().copyWith(fontSize: Sizes.fontSizeMd, color: CustomColors.black),
     hintStyle: const TextStyle().copyWith(fontSize: Sizes.fontSizeSm, color: CustomColors.black),
     errorStyle: const TextStyle().copyWith(fontStyle: FontStyle.normal),
     floatingLabelStyle: const TextStyle().copyWith(color: CustomColors.black.withOpacity(0.8)),
     border: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(Sizes.inputFieldRadius),
-      borderSide: const BorderSide(width: 1, color: CustomColors.grey),
+      borderSide: const BorderSide(width: 1, color: CustomColors.darkGrey),
     ),
     enabledBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(Sizes.inputFieldRadius),
-      borderSide: const BorderSide(width: 1, color: CustomColors.grey),
+      borderSide: const BorderSide(width: 1, color: CustomColors.darkGrey),
     ),
     focusedBorder:const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(Sizes.inputFieldRadius),
@@ -34,13 +34,14 @@ class TTextFormFieldTheme {
       borderRadius: BorderRadius.circular(Sizes.inputFieldRadius),
       borderSide: const BorderSide(width: 2, color: CustomColors.warning),
     ),
+    contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
   );
 
   static InputDecorationTheme darkInputDecorationTheme = InputDecorationTheme(
     errorMaxLines: 2,
     prefixIconColor: CustomColors.darkGrey,
     suffixIconColor: CustomColors.darkGrey,
-    // constraints: const BoxConstraints.expand(height: TSizes.inputFieldHeight),
+    // constraints: const BoxConstraints.expand(height: Sizes.inputFieldHeight),
     labelStyle: const TextStyle().copyWith(fontSize: Sizes.fontSizeMd, color: CustomColors.white),
     hintStyle: const TextStyle().copyWith(fontSize: Sizes.fontSizeSm, color: CustomColors.white),
     floatingLabelStyle: const TextStyle().copyWith(color: CustomColors.white.withOpacity(0.8)),
@@ -64,5 +65,6 @@ class TTextFormFieldTheme {
       borderRadius: BorderRadius.circular(Sizes.inputFieldRadius),
       borderSide: const BorderSide(width: 2, color: CustomColors.warning),
     ),
+    contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
   );
 }
