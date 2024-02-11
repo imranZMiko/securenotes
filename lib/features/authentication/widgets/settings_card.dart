@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:securenotes/features/authentication/widgets/settings_card_fields.dart';
 import 'package:securenotes/utils/constants/sizes.dart';
 
 class SettingsCard extends StatefulWidget {
@@ -25,7 +26,7 @@ class _SettingsCardState extends State<SettingsCard> {
           },
           child: Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: Sizes.defaultSpace, vertical: 10),
+                horizontal: Sizes.defaultSpace, vertical: Sizes.sm),
             child: Row(
               children: [
                 Expanded(
@@ -42,34 +43,11 @@ class _SettingsCardState extends State<SettingsCard> {
           ),
         ),
         AnimatedSize(
-          duration: Duration(milliseconds: 150),
+          duration: Duration(milliseconds: Sizes.animationDuration),
           curve: Curves.easeInOut,
-          child: isOpen ? _buildInnerColumn() : SizedBox(),
+          child: isOpen ? SettingsCardFields() : SizedBox(),
         )
       ],
     );
   }
-}
-
-Widget _buildInnerColumn() {
-  return Column(
-    children: [
-      Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: Sizes.defaultSpace,
-          vertical: 10,
-        ),
-        child: TextField(
-          decoration: InputDecoration(
-            label: Text("Username"),
-          ),
-        ),
-      ),
-      TextButton(
-        onPressed: () {},
-        child: const Text("Confirm"),
-      ),
-      SizedBox(height: 10),
-    ],
-  );
 }

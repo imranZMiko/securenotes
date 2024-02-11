@@ -17,7 +17,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: const NoteEditorScreen(),
+      home: const NotesScreen(),
     );
   }
 }

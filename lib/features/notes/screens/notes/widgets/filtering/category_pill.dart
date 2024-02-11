@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:securenotes/utils/constants/sizes.dart';
 
 import '../../../../../../utils/constants/colors.dart';
 
@@ -17,12 +18,12 @@ class CategoryPill extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: isSelected ? CustomColors.grey : CustomColors.slightGrey,
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(Sizes.borderRadiusLg),
       child: InkWell(
         onTap: onTap,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(Sizes.borderRadiusLg),
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 28),
+          padding: EdgeInsets.symmetric(horizontal: Sizes.lg),
           child: Center(
             child: Text(
               text,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:securenotes/utils/constants/sizes.dart';
 
 class LeadingColorBar extends StatelessWidget {
   final Color color;
@@ -7,8 +8,8 @@ class LeadingColorBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 18,
-      height: 90,
+      width: Sizes.md,
+      height: Sizes.noteCardHeight,
       child: Container(
         color: color,
       ),

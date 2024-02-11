@@ -2,6 +2,7 @@ class Sizes {
   // Padding and margin sizes
   static const double xs = 4.0;
   static const double sm = 8.0;
+  static const double smd = 12.0;
   static const double md = 16.0;
   static const double lg = 24.0;
   static const double xl = 32.0;
@@ -11,6 +12,8 @@ class Sizes {
   static const double iconSm = 16.0;
   static const double iconMd = 24.0;
   static const double iconLg = 32.0;
+  static const double iconXl = 64.0;
+  static const double iconXxl = 80.0;
 
   // Font sizes
   static const double fontSizeSm = 14.0;
@@ -29,9 +32,9 @@ class Sizes {
   static const double spaceBtwSections = 32.0;
 
   // Border radius
-  static const double borderRadiusSm = 4.0;
-  static const double borderRadiusMd = 8.0;
-  static const double borderRadiusLg = 12.0;
+  static const double borderRadiusSm = 5.0;
+  static const double borderRadiusMd = 10.0;
+  static const double borderRadiusLg = 20.0;
 
   // Divider height
   static const double dividerHeight = 1.0;
@@ -39,4 +42,10 @@ class Sizes {
   // Input field
   static const double inputFieldRadius = 5.0;
   static const double spaceBtwInputFields = 16.0;
+
+  static const double noteCardHeight = 100;
+  static const double categoryPillHeight = 45;
+  static const double filterDrawerHeight = 390;
+
+  static const int animationDuration = 150;
 }

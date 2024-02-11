@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:securenotes/utils/constants/sizes.dart';
 
 class IconLarge extends StatelessWidget {
   const IconLarge({super.key});
@@ -7,7 +8,7 @@ class IconLarge extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Icon(
       Icons.event_note,
-      size: 80,
+      size: Sizes.iconXxl,
     );
   }
 }

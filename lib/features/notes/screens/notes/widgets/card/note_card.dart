@@ -10,7 +10,7 @@ class NoteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: BorderRadius.circular(Sizes.borderRadiusSm),
       child: Material(
         color: CustomColors.slightGrey,
         child: InkWell(
@@ -21,7 +21,7 @@ class NoteCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 LeadingColorBar(color: CustomColors.grey),
-                SizedBox(width: 20),
+                SizedBox(width: Sizes.lg),
                 Expanded(
                   child: NoteContent(
                     title: 'Title',

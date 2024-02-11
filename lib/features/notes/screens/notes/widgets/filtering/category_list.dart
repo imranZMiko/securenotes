@@ -19,7 +19,7 @@ class _CategoryListState extends State<CategoryList> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 45, // Adjust height as needed
+      height: Sizes.categoryPillHeight,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: widget.items.length,
@@ -27,9 +27,10 @@ class _CategoryListState extends State<CategoryList> {
           bool isFirstItem = index == 0;
           return Padding(
             padding: EdgeInsets.only(
-                left: isFirstItem ? Sizes.defaultSpace : 13.0,
-                top: 5,
-                bottom: 5),
+              left: isFirstItem ? Sizes.defaultSpace : Sizes.md,
+              top: Sizes.sm,
+              bottom: Sizes.sm,
+            ),
             child: CategoryPill(
               text: widget.items[index],
               isSelected: index == selectedIndex,

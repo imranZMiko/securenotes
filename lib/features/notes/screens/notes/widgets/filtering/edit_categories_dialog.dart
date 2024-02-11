@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:securenotes/utils/constants/sizes.dart';
 
 class EditCategoriesDialog extends StatelessWidget {
   const EditCategoriesDialog({super.key});
@@ -7,12 +8,12 @@ class EditCategoriesDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Dialog(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
+        borderRadius: BorderRadius.circular(Sizes.borderRadiusMd),
       ),
       elevation: 0,
       backgroundColor: Colors.white,
       child: Padding(
-        padding: EdgeInsets.fromLTRB(0, 20, 0, 15),
+        padding: EdgeInsets.fromLTRB(0, Sizes.md, 0, Sizes.md),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -24,14 +25,14 @@ class EditCategoriesDialog extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 15,
+              height: Sizes.md,
             ),
             SimpleDialogOption(
               onPressed: () {},
               child: Row(
                 children: [
                   Icon(Icons.check_box_outline_blank),
-                  SizedBox(width: 12),
+                  SizedBox(width: Sizes.md),
                   Text('Option 1')
                 ],
               ),
@@ -41,7 +42,7 @@ class EditCategoriesDialog extends StatelessWidget {
               child: Row(
                 children: [
                   Icon(Icons.check_box_outline_blank),
-                  SizedBox(width: 12),
+                  SizedBox(width: Sizes.md),
                   Text('Option 2')
                 ],
               ),
@@ -51,7 +52,7 @@ class EditCategoriesDialog extends StatelessWidget {
               child: Row(
                 children: [
                   Icon(Icons.check_box_outline_blank),
-                  SizedBox(width: 12),
+                  SizedBox(width: Sizes.md),
                   Text('Option 3')
                 ],
               ),
@@ -61,7 +62,7 @@ class EditCategoriesDialog extends StatelessWidget {
               child: Row(
                 children: [
                   Icon(Icons.add),
-                  SizedBox(width: 12),
+                  SizedBox(width: Sizes.md),
                   Text('Add a new Category')
                 ],
               ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:securenotes/utils/constants/colors.dart';
 import 'package:securenotes/utils/constants/enums.dart';
+import 'package:securenotes/utils/constants/sizes.dart';
 
 class FilterOption extends StatelessWidget {
   const FilterOption({
@@ -20,13 +21,13 @@ class FilterOption extends StatelessWidget {
   Widget build(BuildContext context) {
     final Map<FilterOptionType, BorderRadius> borderRadiusMap = {
       FilterOptionType.top: BorderRadius.only(
-        topLeft: Radius.circular(5),
-        topRight: Radius.circular(5),
+        topLeft: Radius.circular(Sizes.borderRadiusSm),
+        topRight: Radius.circular(Sizes.borderRadiusSm),
       ),
       FilterOptionType.middle: BorderRadius.zero,
       FilterOptionType.bottom: BorderRadius.only(
-        bottomLeft: Radius.circular(5),
-        bottomRight: Radius.circular(5),
+        bottomLeft: Radius.circular(Sizes.borderRadiusSm),
+        bottomRight: Radius.circular(Sizes.borderRadiusSm),
       ),
     };
 
@@ -41,7 +42,7 @@ class FilterOption extends StatelessWidget {
         borderRadius: borderRadius,
         child: Container(
           width: double.infinity,
-          padding: EdgeInsets.all(12),
+          padding: EdgeInsets.all(Sizes.smd),
           decoration: BoxDecoration(),
           child: Text(label),
         ),

@@ -14,7 +14,7 @@ class NoteList extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         return Padding(
           padding: EdgeInsets.symmetric(
-              horizontal: Sizes.defaultSpace, vertical: 12),
+              horizontal: Sizes.defaultSpace, vertical: Sizes.sm),
           child: NoteCard(),
         );
       },

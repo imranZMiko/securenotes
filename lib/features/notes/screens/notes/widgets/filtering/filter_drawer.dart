@@ -19,18 +19,17 @@ class FilterDrawer extends StatelessWidget {
       child: GestureDetector(
         onVerticalDragUpdate: onVerticalDragUpdate,
         child: Container(
-          height: 390,
+          height: Sizes.filterDrawerHeight,
           width: HelperFunctions.screenWidth(context),
           decoration: BoxDecoration(
-            color: CustomColors.white, // Background color of the container
-            borderRadius: BorderRadius.circular(20),
+            color: CustomColors.white,
+            borderRadius: BorderRadius.circular(Sizes.borderRadiusLg),
             boxShadow: [
               BoxShadow(
-                color: CustomColors.grey.withOpacity(0.5), // Shadow color
-                spreadRadius: 5, // Spread radius
-                blurRadius: 7, // Blur radius
-                offset:
-                    Offset(0, 3), // Offset in x and y axes from the container
+                color: CustomColors.grey.withOpacity(0.5),
+                spreadRadius: 5,
+                blurRadius: 7,
+                offset: Offset(0, 3),
               ),
             ],
           ),
@@ -61,9 +60,9 @@ class FilterDrawer extends StatelessWidget {
           ),
         ),
       ),
-      bottom: drawerVisible ? 0 : -400,
+      bottom: drawerVisible ? 0 : -Sizes.filterDrawerHeight,
       curve: Curves.easeInOut,
-      duration: Duration(milliseconds: 200),
+      duration: Duration(milliseconds: Sizes.animationDuration),
     );
   }
 }
