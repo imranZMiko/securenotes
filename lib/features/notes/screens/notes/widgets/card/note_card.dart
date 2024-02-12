@@ -9,6 +9,17 @@ import 'package:securenotes/utils/helpers/helper_functions.dart';
 import '../../../../../../utils/constants/colors.dart';
 
 class NoteCard extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final String timestamp;
+
+  NoteCard({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.timestamp,
+  });
+
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -33,9 +44,9 @@ class NoteCard extends StatelessWidget {
                 SizedBox(width: Sizes.lg),
                 Expanded(
                   child: NoteContent(
-                    title: 'Title',
-                    subtitle: 'Subtitle',
-                    time: '06:00 PM',
+                    title: title,
+                    subtitle: subtitle,
+                    time: timestamp,
                   ),
                 ),
                 NoteOptionsMenuButton(),

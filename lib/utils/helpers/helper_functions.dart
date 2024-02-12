@@ -3,6 +3,14 @@ import 'package:get/get.dart';
 import 'package:securenotes/utils/constants/sizes.dart';
 
 class HelperFunctions {
+  static String truncateText(String text, int maxLength) {
+    if (text.length <= maxLength) {
+      return text;
+    } else {
+      return '${text.substring(0, maxLength)}...';
+    }
+  }
+
   static void showSnackBar(String message) {
     ScaffoldMessenger.of(Get.context!).showSnackBar(
       SnackBar(
