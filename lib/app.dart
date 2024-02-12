@@ -18,7 +18,15 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: const NoteEditorScreen(),
+      home: const LoginScreen(),
+      initialRoute: '/',
+      getPages: [
+        GetPage(name: '/', page: () => LoginScreen()),
+        GetPage(name: '/register', page: () => RegisterScreen()),
+        GetPage(name: '/notes', page: () => NotesScreen()),
+        GetPage(name: '/note-editor', page: () => NoteEditorScreen()),
+        GetPage(name: '/settings', page: () => AccountSettingsScreen()),
+      ],
     );
   }
 }

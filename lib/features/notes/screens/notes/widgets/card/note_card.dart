@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:securenotes/features/notes/screens/notes/widgets/card/leading_bar.dart';
 import 'package:securenotes/features/notes/screens/notes/widgets/card/note_content.dart';
 import 'package:securenotes/features/notes/screens/notes/widgets/card/note_options_menu_button.dart';
@@ -17,7 +18,9 @@ class NoteCard extends StatelessWidget {
             ? CustomColors.darkerGrey
             : CustomColors.slightGrey,
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Get.toNamed("/note-editor");
+          },
           child: Container(
             width: double.infinity,
             child: Row(

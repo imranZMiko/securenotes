@@ -5,12 +5,12 @@ import '../../constants/colors.dart';
 import '../../constants/sizes.dart';
 
 /* -- Light & Dark Text Button Themes -- */
-class CustomTextButtonTheme {
-  CustomTextButtonTheme._(); //To avoid creating instances
+class CustomElevatedButtonTheme {
+  CustomElevatedButtonTheme._(); //To avoid creating instances
 
   /* -- Light Theme -- */
-  static final lightTextButtonTheme = TextButtonThemeData(
-    style: TextButton.styleFrom(
+  static final lightElevatedButtonTheme = ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
       elevation: 0,
       foregroundColor: CustomColors.dark,
       backgroundColor: CustomColors.primary,
@@ -26,8 +26,8 @@ class CustomTextButtonTheme {
   );
 
   /* -- Dark Theme -- */
-  static final darkTextButtonTheme = TextButtonThemeData(
-    style: TextButton.styleFrom(
+  static final darkElevatedButtonTheme = ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
       elevation: 0,
       foregroundColor: CustomColors.primary,
       backgroundColor: CustomColors.dark,

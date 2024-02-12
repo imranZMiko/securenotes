@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:securenotes/common/widgets/icon_large.dart';
 import 'package:securenotes/features/authentication/widgets/authentication_button.dart';
 import 'package:securenotes/features/authentication/widgets/authentication_field.dart';
+import 'package:securenotes/features/notes/screens/notes/notes.dart';
 
 import '../../../utils/constants/sizes.dart';
 
@@ -28,7 +30,12 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(height: Sizes.spaceBtwInputFields),
                 AuthenticationField(labelText: "Password"),
                 const SizedBox(height: Sizes.spaceBtwSections),
-                AuthenticationButton(labelText: "Log In"),
+                AuthenticationButton(
+                  labelText: "Log In",
+                  onPressed: () {
+                    Get.offNamed("/notes");
+                  },
+                ),
               ],
             ),
           ),

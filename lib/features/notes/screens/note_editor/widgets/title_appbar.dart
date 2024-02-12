@@ -1,59 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:securenotes/features/notes/controllers/title_app_bar_controller.dart';
 
-class TitleAppBar extends StatefulWidget implements PreferredSizeWidget {
-  const TitleAppBar({super.key});
+class TitleAppBar extends StatelessWidget implements PreferredSizeWidget {
+  TitleAppBar({super.key});
+
+  final TitleAppBarController controller = Get.put(TitleAppBarController());
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   @override
-  State<TitleAppBar> createState() => _TitleAppBarState();
-}
-
-class _TitleAppBarState extends State<TitleAppBar> {
-  final _controller = TextEditingController();
-
-  @override
-  void initState() {
-    final _newValue = "Title";
-
-    _controller.value = TextEditingValue(
-      text: _newValue,
-      selection: TextSelection.fromPosition(
-        TextPosition(offset: _newValue.length),
-      ),
-    );
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    // Clean up the controller when the widget is removed from the
-    // widget tree.
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return PreferredSize(
-      preferredSize: widget.preferredSize,
+      preferredSize: preferredSize,
       child: AppBar(
-        title: TextField(
-          controller: _controller,
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            enabledBorder: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            errorBorder: InputBorder.none,
-            focusedErrorBorder: InputBorder.none,
-            contentPadding: EdgeInsets.zero,
-          ),
-          style: Theme.of(context).textTheme.headlineSmall,
-          onTapOutside: (event) {
-            FocusManager.instance.primaryFocus?.unfocus();
-          },
-        ),
+        title: Obx(() => TextField(
+              controller: TextEditingController.fromValue(TextEditingValue(
+                text: controller.title.value,
+                selection: TextSelection.collapsed(
+                    offset: controller.title.value.length),
+              )),
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                enabledBorder: InputBorder.none,
+                focusedBorder: InputBorder.none,
+                errorBorder: InputBorder.none,
+                focusedErrorBorder: InputBorder.none,
+                contentPadding: EdgeInsets.zero,
+              ),
+              style: Theme.of(context).textTheme.headlineSmall,
+              onChanged: (value) => controller.updateTitle(value),
+            )),
         actions: [
           IconButton(
             icon: Icon(Icons.more_vert),

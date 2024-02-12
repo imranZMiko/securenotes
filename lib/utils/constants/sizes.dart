@@ -45,7 +45,8 @@ class Sizes {
 
   static const double noteCardHeight = 100;
   static const double categoryPillHeight = 45;
-  static const double filterDrawerHeight = 390;
+  static const double filterDrawerHeight = 350;
 
-  static const int animationDuration = 150;
+  static const int animationDurationSm = 200;
+  static const int animationDurationLg = 300;
 }

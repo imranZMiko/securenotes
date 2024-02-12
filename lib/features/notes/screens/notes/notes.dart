@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:securenotes/features/notes/screens/notes/widgets/note_list.dart';
 import 'package:securenotes/features/notes/screens/notes/widgets/filtered_note_list.dart';
 import 'package:securenotes/utils/constants/colors.dart';
@@ -17,13 +18,15 @@ class NotesScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('SecureNotes'),
         actions: [
-          IconButton(
-            icon: Icon(Icons.settings),
-            onPressed: () {},
-          ),
+          // IconButton(
+          //   icon: Icon(Icons.settings),
+          //   onPressed: () {},
+          // ),
           IconButton(
             icon: Icon(Icons.account_circle),
-            onPressed: () {},
+            onPressed: () {
+              Get.toNamed("/settings");
+            },
           ),
         ],
       ),

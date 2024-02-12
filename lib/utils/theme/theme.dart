@@ -14,7 +14,7 @@ class AppTheme {
     brightness: Brightness.light,
     primaryColor: CustomColors.primary,
     scaffoldBackgroundColor: CustomColors.white,
-    textButtonTheme: CustomTextButtonTheme.lightTextButtonTheme,
+    elevatedButtonTheme: CustomElevatedButtonTheme.lightElevatedButtonTheme,
     inputDecorationTheme: CustomTextFormFieldTheme.lightInputDecorationTheme,
     appBarTheme: AppBarTheme().copyWith(
       surfaceTintColor: Colors.transparent,
@@ -27,7 +27,7 @@ class AppTheme {
     brightness: Brightness.dark,
     primaryColor: CustomColors.primary,
     scaffoldBackgroundColor: CustomColors.black,
-    textButtonTheme: CustomTextButtonTheme.darkTextButtonTheme,
+    elevatedButtonTheme: CustomElevatedButtonTheme.darkElevatedButtonTheme,
     inputDecorationTheme: CustomTextFormFieldTheme.darkInputDecorationTheme,
     appBarTheme: AppBarTheme().copyWith(
       surfaceTintColor: Colors.transparent,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:securenotes/features/authentication/widgets/authentication_button.dart';
 import 'package:securenotes/utils/constants/sizes.dart';
 
 class SettingsCardFields extends StatelessWidget {
@@ -19,9 +20,9 @@ class SettingsCardFields extends StatelessWidget {
             ),
           ),
         ),
-        TextButton(
+        AuthenticationButton(
           onPressed: () {},
-          child: const Text("Confirm"),
+          labelText: "Confirm",
         ),
         SizedBox(height: Sizes.sm),
       ],

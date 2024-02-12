@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:securenotes/features/authentication/controllers/settings_card_controller.dart';
 import 'package:securenotes/features/authentication/widgets/settings_card.dart';
 import 'package:securenotes/utils/constants/sizes.dart';
 
@@ -7,6 +9,8 @@ class AccountSettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put<SettingsCardController>(SettingsCardController());
+
     return Scaffold(
       appBar: AppBar(
         title: Text('SecureNotes'),
