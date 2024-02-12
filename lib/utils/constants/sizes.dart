@@ -49,4 +49,5 @@ class Sizes {
 
   static const int animationDurationSm = 200;
   static const int animationDurationLg = 300;
+  static const int animationDurationXl = 1200;
 }

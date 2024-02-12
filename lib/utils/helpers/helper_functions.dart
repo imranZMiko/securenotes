@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:securenotes/utils/constants/sizes.dart';
 
 class HelperFunctions {
   static void showSnackBar(String message) {
     ScaffoldMessenger.of(Get.context!).showSnackBar(
-      SnackBar(content: Text(message)),
+      SnackBar(
+        content: Text(message),
+        duration: Duration(milliseconds: Sizes.animationDurationXl),
+      ),
     );
   }
 
