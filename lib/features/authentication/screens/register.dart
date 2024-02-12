@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:securenotes/common/widgets/icon_large.dart';
@@ -6,16 +5,17 @@ import 'package:securenotes/features/authentication/controllers/registration_con
 import 'package:securenotes/features/authentication/widgets/authentication_button.dart';
 import 'package:securenotes/features/authentication/widgets/authentication_field.dart';
 import 'package:securenotes/features/authentication/widgets/switch_auth_section_button.dart';
-import 'package:securenotes/features/notes/screens/notes/notes.dart';
 import 'package:securenotes/utils/validators/validation.dart';
 
 import '../../../utils/constants/sizes.dart';
 
+/// Screen for user registration
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Initialize RegistrationController to manage registration logic
     final RegistrationController registrationController =
         Get.put(RegistrationController());
 
@@ -29,7 +29,7 @@ class RegisterScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  IconLarge(),
+                  const IconLarge(),
                   Text(
                     "SecureNotes",
                     style: Theme.of(context).textTheme.headlineLarge,
@@ -79,7 +79,7 @@ class RegisterScreen extends StatelessWidget {
                     onPressed: () async {
                       if (registrationController.formKey.currentState!
                           .validate()) {
-                        print(registrationController.emailController.text);
+                        Get.log(registrationController.emailController.text);
                         var success = await registrationController.registerUser(
                           registrationController.emailController.text,
                           registrationController.passwordController.text,

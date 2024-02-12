@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:securenotes/utils/constants/colors.dart';
 
-/// Custom Class for Light & Dark Text Themes
 class CustomTextTheme {
-  CustomTextTheme._(); // To avoid creating instances
+  CustomTextTheme._();
 
-  /// Customizable Light Text Theme
   static TextTheme lightTextTheme = GoogleFonts.quicksandTextTheme().copyWith(
     headlineLarge: GoogleFonts.quicksand()
         .copyWith(fontSize: 32.0, color: CustomColors.dark),
@@ -34,7 +32,6 @@ class CustomTextTheme {
         .copyWith(fontSize: 11.0, color: CustomColors.dark),
   );
 
-  /// Customizable Dark Text Theme
   static TextTheme darkTextTheme = GoogleFonts.quicksandTextTheme().copyWith(
     headlineLarge: GoogleFonts.quicksand()
         .copyWith(fontSize: 32.0, color: CustomColors.light),

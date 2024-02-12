@@ -10,10 +10,12 @@ import 'package:securenotes/utils/helpers/helper_functions.dart';
 
 import '../../../../../../utils/constants/colors.dart';
 
+/// Widget representing a note card.
 class NoteCard extends StatelessWidget {
   final Note note;
 
-  NoteCard({
+  /// Constructor for NoteCard.
+  const NoteCard({
     super.key,
     required this.note,
   });
@@ -30,7 +32,7 @@ class NoteCard extends StatelessWidget {
           onTap: () {
             Get.toNamed("/note-editor", arguments: note);
           },
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -39,7 +41,7 @@ class NoteCard extends StatelessWidget {
                     color: HelperFunctions.isDarkMode(context)
                         ? CustomColors.dark
                         : CustomColors.grey),
-                SizedBox(width: Sizes.lg),
+                const SizedBox(width: Sizes.lg),
                 Expanded(
                   child: NoteContent(
                     title: note.title,

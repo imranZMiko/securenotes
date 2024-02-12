@@ -10,6 +10,7 @@ import 'package:securenotes/features/notes/screens/note_editor/widgets/title_app
 
 import '../../../../utils/constants/sizes.dart';
 
+/// Screen for editing a note.
 class NoteEditorScreen extends StatelessWidget {
   const NoteEditorScreen({super.key});
 
@@ -37,13 +38,13 @@ class NoteEditorScreen extends StatelessWidget {
       child: Scaffold(
         appBar: TitleAppBar(),
         body: Padding(
-          padding: EdgeInsets.all(Sizes.defaultSpace),
+          padding: const EdgeInsets.all(Sizes.defaultSpace),
           child: Column(
             children: [
-              Expanded(
+              const Expanded(
                 child: NoteInputField(),
               ),
-              NoteActionButtonsRow(),
+              NoteActionButtonsRow(note: note),
             ],
           ),
         ),

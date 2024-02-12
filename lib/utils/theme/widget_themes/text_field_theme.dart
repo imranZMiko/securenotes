@@ -9,7 +9,6 @@ class CustomTextFormFieldTheme {
     errorMaxLines: 3,
     prefixIconColor: CustomColors.darkGrey,
     suffixIconColor: CustomColors.darkGrey,
-    // constraints: const BoxConstraints.expand(height: Sizes.inputFieldHeight),
     labelStyle: const TextStyle()
         .copyWith(fontSize: Sizes.fontSizeMd, color: CustomColors.black),
     hintStyle: const TextStyle()
@@ -38,7 +37,7 @@ class CustomTextFormFieldTheme {
       borderSide: const BorderSide(width: 2, color: CustomColors.warning),
     ),
     contentPadding:
-        EdgeInsets.symmetric(horizontal: Sizes.md, vertical: Sizes.md),
+        const EdgeInsets.symmetric(horizontal: Sizes.md, vertical: Sizes.md),
   );
 
   static InputDecorationTheme darkInputDecorationTheme = InputDecorationTheme(
@@ -73,6 +72,6 @@ class CustomTextFormFieldTheme {
       borderSide: const BorderSide(width: 2, color: CustomColors.warning),
     ),
     contentPadding:
-        EdgeInsets.symmetric(horizontal: Sizes.md, vertical: Sizes.md),
+        const EdgeInsets.symmetric(horizontal: Sizes.md, vertical: Sizes.md),
   );
 }

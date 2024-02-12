@@ -1,3 +1,4 @@
+/// Represents a Note object with id, title, content, created date, and last modified date.
 class Note {
   String id;
   String title;
@@ -5,6 +6,7 @@ class Note {
   DateTime created;
   DateTime lastModified;
 
+  /// Constructor for creating a Note object.
   Note({
     required this.id,
     required this.title,
@@ -13,6 +15,7 @@ class Note {
     required this.lastModified,
   });
 
+  /// Converts the Note object to a JSON format.
   Map<String, dynamic> toJSON() {
     return {
       'id': id,
@@ -23,6 +26,7 @@ class Note {
     };
   }
 
+  /// Creates a Note object from a JSON map.
   factory Note.fromJSON(Map<String, dynamic> json) {
     return Note(
       id: json['id'],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:securenotes/utils/constants/colors.dart';
 import 'package:securenotes/utils/theme/text_theme.dart';
 import 'package:securenotes/utils/theme/widget_themes/text_button_theme.dart';
@@ -16,7 +15,7 @@ class AppTheme {
     scaffoldBackgroundColor: CustomColors.white,
     elevatedButtonTheme: CustomElevatedButtonTheme.lightElevatedButtonTheme,
     inputDecorationTheme: CustomTextFormFieldTheme.lightInputDecorationTheme,
-    appBarTheme: AppBarTheme().copyWith(
+    appBarTheme: const AppBarTheme().copyWith(
       surfaceTintColor: Colors.transparent,
       color: CustomColors.white,
     ),
@@ -29,7 +28,7 @@ class AppTheme {
     scaffoldBackgroundColor: CustomColors.black,
     elevatedButtonTheme: CustomElevatedButtonTheme.darkElevatedButtonTheme,
     inputDecorationTheme: CustomTextFormFieldTheme.darkInputDecorationTheme,
-    appBarTheme: AppBarTheme().copyWith(
+    appBarTheme: const AppBarTheme().copyWith(
       surfaceTintColor: Colors.transparent,
       color: CustomColors.black,
     ),

@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:securenotes/utils/theme/text_theme.dart';
 import '../../constants/colors.dart';
 import '../../constants/sizes.dart';
 
-/* -- Light & Dark Text Button Themes -- */
 class CustomElevatedButtonTheme {
-  CustomElevatedButtonTheme._(); //To avoid creating instances
+  CustomElevatedButtonTheme._();
 
-  /* -- Light Theme -- */
   static final lightElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       elevation: 0,
@@ -25,7 +22,6 @@ class CustomElevatedButtonTheme {
     ),
   );
 
-  /* -- Dark Theme -- */
   static final darkElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       elevation: 0,

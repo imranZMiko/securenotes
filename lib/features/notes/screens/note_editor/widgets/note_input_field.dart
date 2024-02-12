@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:securenotes/features/notes/controllers/note_editor_controller.dart';
 
+/// Widget for the input field of a note in the note editor screen.
 class NoteInputField extends StatelessWidget {
-  const NoteInputField({Key? key}) : super(key: key);
+  const NoteInputField({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class NoteInputField extends StatelessWidget {
             selection: TextSelection.collapsed(
                 offset: controller.content.value.length),
           )),
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             border: InputBorder.none,
             enabledBorder: InputBorder.none,
             focusedBorder: InputBorder.none,

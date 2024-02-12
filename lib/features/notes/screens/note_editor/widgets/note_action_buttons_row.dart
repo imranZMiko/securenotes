@@ -1,28 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:securenotes/features/notes/controllers/note_controller.dart';
+import 'package:securenotes/features/notes/models/note_model.dart';
 
+/// Widget for displaying action buttons for a note.
 class NoteActionButtonsRow extends StatelessWidget {
-  const NoteActionButtonsRow({Key? key}) : super(key: key);
+  /// Constructor for NoteActionButtonsRow.
+  const NoteActionButtonsRow({super.key, required this.note});
+
+  final Note note;
 
   @override
   Widget build(BuildContext context) {
+    NoteController noteController = Get.find();
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         IconButton(
-          icon: Icon(Icons.copy),
-          onPressed: () {},
-        ),
-        IconButton(
-          icon: Icon(Icons.paste),
-          onPressed: () {},
-        ),
-        IconButton(
-          icon: Icon(Icons.check_box_outlined),
-          onPressed: () {},
-        ),
-        IconButton(
-          icon: Icon(Icons.font_download_outlined),
-          onPressed: () {},
+          icon: const Icon(Icons.delete_outline),
+          onPressed: () async {
+            Get.back();
+            await noteController.deleteNoteById(note.id);
+          },
         ),
       ],
     );

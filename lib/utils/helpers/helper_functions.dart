@@ -15,7 +15,7 @@ class HelperFunctions {
     ScaffoldMessenger.of(Get.context!).showSnackBar(
       SnackBar(
         content: Text(message),
-        duration: Duration(milliseconds: Sizes.animationDurationXl),
+        duration: const Duration(milliseconds: Sizes.animationDurationXl),
       ),
     );
   }

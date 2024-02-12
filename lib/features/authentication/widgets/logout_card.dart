@@ -1,14 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:securenotes/features/authentication/widgets/settings_card_fields.dart';
-import 'package:securenotes/features/authentication/controllers/settings_card_controller.dart';
 import 'package:securenotes/utils/constants/sizes.dart';
 
+/// Widget for displaying a logout card.
 class LogoutCard extends StatelessWidget {
   final String title;
 
-  const LogoutCard({Key? key, required this.title}) : super(key: key);
+  /// Constructor for LogoutCard.
+  const LogoutCard({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class LogoutCard extends StatelessWidget {
         Get.offNamed('/splash');
       },
       child: Padding(
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: Sizes.defaultSpace,
           vertical: Sizes.sm,
         ),

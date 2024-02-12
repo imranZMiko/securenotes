@@ -5,11 +5,11 @@ import 'package:securenotes/features/authentication/controllers/login_controller
 import 'package:securenotes/features/authentication/widgets/authentication_button.dart';
 import 'package:securenotes/features/authentication/widgets/authentication_field.dart';
 import 'package:securenotes/features/authentication/widgets/switch_auth_section_button.dart';
-import 'package:securenotes/features/notes/screens/notes/notes.dart';
 import 'package:securenotes/utils/validators/validation.dart';
 
 import '../../../utils/constants/sizes.dart';
 
+/// Screen for user login
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
@@ -26,7 +26,7 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  IconLarge(),
+                  const IconLarge(),
                   Text(
                     "SecureNotes",
                     style: Theme.of(context).textTheme.headlineLarge,

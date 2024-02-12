@@ -1,11 +1,11 @@
 import 'dart:convert';
-import 'dart:ffi';
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:securenotes/utils/http/http_client.dart';
 import 'package:securenotes/features/notes/models/note_model.dart';
 
+/// Controller for managing notes.
 class NoteController extends GetxController {
   var getNotes = <Note>[].obs;
 
@@ -15,28 +15,29 @@ class NoteController extends GetxController {
     super.onInit();
   }
 
-  void deleteNoteById(String id) async {
-    final storage = const FlutterSecureStorage();
+  /// Delete a note by its ID.
+  Future<void> deleteNoteById(String id) async {
+    const storage = FlutterSecureStorage();
 
     getNotes.removeWhere((note) => note.id == id);
 
     getNotes.refresh();
 
     try {
-      await HttpHelper.delete('notes/${id}');
+      await HttpHelper.delete('notes/$id');
 
       var notes = getNotes.toList();
       await storage.write(
           key: 'notes',
           value: jsonEncode(notes.map((note) => note.toJSON()).toList()));
     } catch (e) {
-      print("HEHE");
-      print(e);
+      Get.log(e.toString());
     }
   }
 
+  /// Add a new note or update an existing note.
   void addOrUpdateNote(Note newNote) async {
-    final storage = const FlutterSecureStorage();
+    const storage = FlutterSecureStorage();
 
     try {
       var existingNote = getNotes.firstWhere((note) => note.id == newNote.id);
@@ -55,8 +56,7 @@ class NoteController extends GetxController {
             key: 'notes',
             value: jsonEncode(notes.map((note) => note.toJSON()).toList()));
       } catch (e) {
-        print("HEHE");
-        print(e);
+        Get.log(e.toString());
       }
     } catch (e) {
       getNotes.add(newNote);
@@ -71,12 +71,12 @@ class NoteController extends GetxController {
           ),
         );
       } catch (e) {
-        print("hoho");
-        print(e);
+        Get.log(e.toString());
       }
     }
   }
 
+  /// Find the ID of a missing note.
   String findMissingNoteId() {
     int missingId = 1;
 
@@ -87,8 +87,9 @@ class NoteController extends GetxController {
     return missingId.toString();
   }
 
+  /// Fetch notes from the server or local storage.
   void fetchNotes() async {
-    final storage = const FlutterSecureStorage();
+    const storage = FlutterSecureStorage();
 
     try {
       var response = await HttpHelper.get('notes');
@@ -110,7 +111,7 @@ class NoteController extends GetxController {
           key: 'notes',
           value: jsonEncode(notes.map((note) => note.toJSON()).toList()));
     } catch (e) {
-      print(e);
+      Get.log(e.toString());
       String? value = await storage.read(key: 'notes');
       List<dynamic> notesData = jsonDecode(value!);
 

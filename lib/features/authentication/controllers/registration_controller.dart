@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:securenotes/utils/helpers/helper_functions.dart';
 
+/// Controller for handling user registration
 class RegistrationController extends GetxController {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController usernameController = TextEditingController();
@@ -11,10 +12,12 @@ class RegistrationController extends GetxController {
       TextEditingController();
   final formKey = GlobalKey<FormState>();
 
+  /// Registers a new user with the provided email and password
+  ///
+  /// Returns true if registration is successful, false otherwise
   Future<bool> registerUser(String email, String password) async {
     try {
-      final credential =
-          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );

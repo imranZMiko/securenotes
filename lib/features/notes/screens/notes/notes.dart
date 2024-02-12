@@ -2,24 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:securenotes/features/notes/controllers/note_controller.dart';
 import 'package:securenotes/features/notes/models/note_model.dart';
-import 'package:securenotes/features/notes/screens/notes/widgets/filtering/filter_drawer.dart';
 import 'package:securenotes/features/notes/screens/notes/widgets/note_list.dart';
-import 'package:securenotes/features/notes/screens/notes/widgets/filtered_note_list.dart';
 import 'package:securenotes/utils/constants/colors.dart';
 import 'package:securenotes/utils/helpers/helper_functions.dart';
 
-import '../../../../utils/constants/sizes.dart';
-
+/// Widget representing the main screen for displaying notes.
 class NotesScreen extends StatelessWidget {
   const NotesScreen({super.key});
-
-  showDrawer(BuildContext context) {
-    showModalBottomSheet(
-        context: context,
-        builder: (BuildContext context) {
-          return FilterDrawer();
-        });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,23 +16,17 @@ class NotesScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('SecureNotes'),
+        title: const Text('SecureNotes'),
         actions: [
           IconButton(
-            onPressed: () {
-              showDrawer(context);
-            },
-            icon: Icon(Icons.filter_list),
-          ),
-          IconButton(
-            icon: Icon(Icons.account_circle),
+            icon: const Icon(Icons.account_circle),
             onPressed: () {
               Get.toNamed("/settings");
             },
           ),
         ],
       ),
-      body: FilteredNoteList(),
+      body: const NoteList(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           var missingID = noteController.findMissingNoteId();
@@ -62,8 +45,8 @@ class NotesScreen extends StatelessWidget {
         backgroundColor: HelperFunctions.isDarkMode(context)
             ? CustomColors.mDarkerGrey
             : CustomColors.slightGrey,
-        child: Icon(Icons.add),
-        shape: CircleBorder(),
+        shape: const CircleBorder(),
+        child: const Icon(Icons.add),
       ),
     );
   }

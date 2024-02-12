@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:securenotes/utils/constants/sizes.dart';
 
+/// Widget for displaying a colored bar at the leading edge of a card.
 class LeadingColorBar extends StatelessWidget {
   final Color color;
-  const LeadingColorBar({Key? key, required this.color}) : super(key: key);
+
+  /// Constructor for LeadingColorBar.
+  const LeadingColorBar({Key? key, required this.color});
 
   @override
   Widget build(BuildContext context) {

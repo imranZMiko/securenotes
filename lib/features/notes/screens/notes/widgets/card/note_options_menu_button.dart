@@ -3,8 +3,9 @@ import 'package:get/get.dart';
 import 'package:securenotes/features/notes/controllers/note_controller.dart';
 import 'package:securenotes/features/notes/models/note_model.dart';
 
+/// Widget for displaying options menu button for a note.
 class NoteOptionsMenuButton extends StatelessWidget {
-  const NoteOptionsMenuButton({Key? key, required this.note}) : super(key: key);
+  const NoteOptionsMenuButton({super.key, required this.note});
 
   final Note note;
 
@@ -14,8 +15,8 @@ class NoteOptionsMenuButton extends StatelessWidget {
 
     return PopupMenuButton(
       surfaceTintColor: Colors.transparent,
-      icon: Icon(Icons.more_vert),
-      offset: Offset(-2, 40),
+      icon: const Icon(Icons.more_vert),
+      offset: const Offset(-2, 40),
       onSelected: (value) {
         if (value == 'Edit') {
           Get.toNamed("/note-editor", arguments: note);
@@ -24,11 +25,11 @@ class NoteOptionsMenuButton extends StatelessWidget {
         }
       },
       itemBuilder: (BuildContext context) => [
-        PopupMenuItem<String>(
+        const PopupMenuItem<String>(
           value: 'Edit',
           child: Text('Edit'),
         ),
-        PopupMenuItem<String>(
+        const PopupMenuItem<String>(
           value: 'Delete',
           child: Text('Delete'),
         ),

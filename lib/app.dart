@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:securenotes/features/authentication/screens/login.dart';
@@ -11,11 +10,6 @@ import 'package:securenotes/utils/theme/theme.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
-
-  Future<User?> _checkAuthStatus() async {
-    return FirebaseAuth.instance.authStateChanges().first;
-  }
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -27,12 +21,12 @@ class App extends StatelessWidget {
       defaultTransition: Transition.noTransition,
       initialRoute: '/splash',
       getPages: [
-        GetPage(name: '/splash', page: () => SplashScreen()),
-        GetPage(name: '/login', page: () => LoginScreen()),
-        GetPage(name: '/register', page: () => RegisterScreen()),
-        GetPage(name: '/notes', page: () => NotesScreen()),
-        GetPage(name: '/note-editor', page: () => NoteEditorScreen()),
-        GetPage(name: '/settings', page: () => AccountSettingsScreen()),
+        GetPage(name: '/splash', page: () => const SplashScreen()),
+        GetPage(name: '/login', page: () => const LoginScreen()),
+        GetPage(name: '/register', page: () => const RegisterScreen()),
+        GetPage(name: '/notes', page: () => const NotesScreen()),
+        GetPage(name: '/note-editor', page: () => const NoteEditorScreen()),
+        GetPage(name: '/settings', page: () => const AccountSettingsScreen()),
       ],
     );
   }

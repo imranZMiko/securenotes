@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:securenotes/utils/constants/sizes.dart';
 
+/// Widget for displaying the content of a note.
 class NoteContent extends StatelessWidget {
   final String title;
   final String subtitle;
   final String time;
 
+  /// Constructor for NoteContent widget.
   const NoteContent({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
     required this.time,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +24,12 @@ class NoteContent extends StatelessWidget {
           title,
           style: Theme.of(context).textTheme.bodyLarge,
         ),
-        SizedBox(height: Sizes.xs),
+        const SizedBox(height: Sizes.xs),
         Text(
           subtitle,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
-        SizedBox(height: Sizes.xs),
+        const SizedBox(height: Sizes.xs),
         Text(
           time,
           style: Theme.of(context).textTheme.bodySmall,
