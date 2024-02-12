@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:securenotes/common/widgets/icon_large.dart';
 import 'package:securenotes/features/authentication/widgets/authentication_button.dart';
 import 'package:securenotes/features/authentication/widgets/authentication_field.dart';
+import 'package:securenotes/features/authentication/widgets/switch_auth_section_button.dart';
 import 'package:securenotes/features/notes/screens/notes/notes.dart';
 
 import '../../../utils/constants/sizes.dart';
@@ -38,6 +39,12 @@ class RegisterScreen extends StatelessWidget {
                   labelText: 'Register',
                   onPressed: () {
                     Get.offNamed("/notes");
+                  },
+                ),
+                SwitchAuthSectionButton(
+                  buttonText: "Already have an account? Login",
+                  onPressed: () {
+                    Get.offNamed("/login");
                   },
                 ),
               ],
