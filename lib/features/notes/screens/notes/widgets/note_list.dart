@@ -12,37 +12,19 @@ class NoteList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: NoteController.fetchNotes(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(
-            child: CircularProgressIndicator(),
-          );
-        }
-        if (!snapshot.hasData) {
-          return Center(
-            child: SizedBox(),
-          );
-        }
-        return ListView.builder(
+    final NoteController noteController = Get.find();
+    return Obx(() => ListView.builder(
           scrollDirection: Axis.vertical,
-          itemCount: snapshot.data!.length,
+          itemCount: noteController.getNotes.length,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: Sizes.defaultSpace, vertical: Sizes.sm),
               child: NoteCard(
-                title: snapshot.data![index].title,
-                subtitle: HelperFunctions.truncateText(
-                    snapshot.data![index].content, 30),
-                timestamp: DateFormat('h:mm a  dd/MM/yyyy')
-                    .format(snapshot.data![index].created),
+                note: noteController.getNotes[index],
               ),
             );
           },
-        );
-      },
-    );
+        ));
   }
 }

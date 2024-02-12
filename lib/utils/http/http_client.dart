@@ -39,7 +39,7 @@ class HttpHelper {
 
   // Handle the HTTP response
   static dynamic _handleResponse(http.Response response) {
-    if (response.statusCode == 200) {
+    if (response.statusCode == 200 || response.statusCode == 201) {
       return json.decode(response.body);
     } else {
       throw Exception('Failed to load data: ${response.statusCode}');

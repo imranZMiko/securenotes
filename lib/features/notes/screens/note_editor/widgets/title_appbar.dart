@@ -5,7 +5,7 @@ import 'package:securenotes/features/notes/controllers/title_app_bar_controller.
 class TitleAppBar extends StatelessWidget implements PreferredSizeWidget {
   TitleAppBar({super.key});
 
-  final TitleAppBarController controller = Get.put(TitleAppBarController());
+  final TitleAppBarController controller = Get.find();
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);

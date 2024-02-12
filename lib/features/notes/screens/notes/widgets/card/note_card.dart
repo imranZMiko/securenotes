@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
+import 'package:securenotes/features/notes/models/note_model.dart';
 import 'package:securenotes/features/notes/screens/notes/widgets/card/leading_bar.dart';
 import 'package:securenotes/features/notes/screens/notes/widgets/card/note_content.dart';
 import 'package:securenotes/features/notes/screens/notes/widgets/card/note_options_menu_button.dart';
@@ -9,15 +11,11 @@ import 'package:securenotes/utils/helpers/helper_functions.dart';
 import '../../../../../../utils/constants/colors.dart';
 
 class NoteCard extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final String timestamp;
+  final Note note;
 
   NoteCard({
     super.key,
-    required this.title,
-    required this.subtitle,
-    required this.timestamp,
+    required this.note,
   });
 
   @override
@@ -30,7 +28,7 @@ class NoteCard extends StatelessWidget {
             : CustomColors.slightGrey,
         child: InkWell(
           onTap: () {
-            Get.toNamed("/note-editor");
+            Get.toNamed("/note-editor", arguments: note);
           },
           child: Container(
             width: double.infinity,
@@ -44,12 +42,12 @@ class NoteCard extends StatelessWidget {
                 SizedBox(width: Sizes.lg),
                 Expanded(
                   child: NoteContent(
-                    title: title,
-                    subtitle: subtitle,
-                    time: timestamp,
+                    title: note.title,
+                    subtitle: HelperFunctions.truncateText(note.content, 30),
+                    time: DateFormat('h:mm a  dd/MM/yyyy').format(note.created),
                   ),
                 ),
-                NoteOptionsMenuButton(),
+                NoteOptionsMenuButton(note: note),
               ],
             ),
           ),

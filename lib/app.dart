@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:securenotes/features/authentication/controllers/login_controller.dart';
 import 'package:securenotes/features/authentication/screens/login.dart';
 import 'package:securenotes/features/authentication/screens/register.dart';
 import 'package:securenotes/features/authentication/screens/settings.dart';
